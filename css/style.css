@@ -17,10 +17,12 @@ body {
 /* Encabezado */
 header {
   background-color: #f5f5f5;
-  height: 120px; /* Altura fija para todos los headers */
+  height: 70px; /* Ajustado al tamaño de branding.html */
   border-bottom: 2px solid #ddd;
   display: flex;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .header-container {
@@ -28,8 +30,8 @@ header {
   justify-content: space-between;
   align-items: center;
   max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 0; /* Sin margen */
+  padding: 0;
   width: 100%;
 }
 
@@ -37,12 +39,14 @@ header {
   font-size: 2.5em;
   font-weight: 300;
   text-align: left;
-  margin: 0;
+  margin-left: 0; /* Pegado a la izquierda */
 }
 
 .header-nav {
   display: flex;
   gap: 30px;
+  margin-right: 0; /* Sin margen derecha */
+  padding-right: 0;
 }
 
 .header-nav a {
