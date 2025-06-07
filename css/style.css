@@ -34,19 +34,16 @@ header {
 }
 
 .header-name {
-  font-size: 2.8em;
+  font-size: 2em;       /* Ajustado para que quepa en 70px */
   font-weight: 300;
-  text-align: left;
-  line-height: 1.1;
+  line-height: 1.1;     /* Reduce interlineado para las dos líneas */
   margin: 0;
-  transition: transform 0.3s ease;
+  text-align: left;
+  white-space: normal;  /* Permite salto de línea */
+  letter-spacing: 0.05em;
 }
 
-.header-name:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
+/* Navegación en el header */
 .header-nav {
   display: flex;
   gap: 30px;
@@ -58,12 +55,6 @@ header {
   font-weight: 300;
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  transition: transform 0.3s ease;
-}
-
-.header-nav a:hover {
-  transform: scale(1.05);
-  cursor: pointer;
 }
 
 /* Secciones */
@@ -84,12 +75,6 @@ h2 {
   color: #333;
   text-transform: uppercase;
   text-align: left;
-  transition: transform 0.3s ease;
-}
-
-h2:hover {
-  transform: scale(1.05);
-  cursor: pointer;
 }
 
 /* Contenedor About Me */
@@ -167,7 +152,6 @@ footer {
   font-weight: 300;
   width: 100%;
   position: relative;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .areas li a .num {
@@ -187,6 +171,9 @@ footer {
 
 .areas li a:hover {
   color: #007acc;
+}
+
+/* Hover efecto para las secciones principales */
+.elemento-hover:hover {
   transform: scale(1.05);
-  cursor: pointer;
 }
