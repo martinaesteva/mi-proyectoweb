@@ -274,13 +274,14 @@ footer {
 .animation-images,
 .3d-images,
 .photography-images {
-  max-width: 700px; /* mismo ancho máximo que el texto */
-  margin: 2rem auto 0 auto; /* centrado con margen arriba */
-  gap: 1.5rem;
-  display: block;
+  max-width: 700px;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
 }
 
-/* Imágenes dentro de cada contenedor: 100% ancho del contenedor padre */
+/* Imágenes dentro de cada contenedor: tamaño controlado */
 .branding-images img,
 .editorial-images img,
 .typography-images img,
@@ -289,10 +290,9 @@ footer {
 .3d-images img,
 .photography-images img {
   width: 100%;
-  border-radius: 8px;
+  height: 150px;
   object-fit: cover;
-  margin-top: 1rem;
-  display: block;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
@@ -305,3 +305,17 @@ footer {
 .3d-images img:hover,
 .photography-images img:hover {
   transform: scale(1.05);
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .branding-images img,
+  .editorial-images img,
+  .typography-images img,
+  .uxui-images img,
+  .animation-images img,
+  .3d-images img,
+  .photography-images img {
+    height: 120px;
+  }
+}
