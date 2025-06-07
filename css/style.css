@@ -21,16 +21,20 @@ header {
   border-bottom: 2px solid #ddd;
   display: flex;
   align-items: center;
+  width: 100%; /* que ocupe toda la anchura */
+  padding: 0; /* sin padding */
+  box-sizing: border-box;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* separa extremos */
   align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0; /* Sin padding para que esté pegado a los bordes */
+  max-width: 100%; /* ocupa toda la anchura posible */
+  margin: 0; /* sin margen */
+  padding: 0 20px; /* espacio lateral para que no toque bordes */
   width: 100%;
+  box-sizing: border-box;
 }
 
 .header-name {
@@ -41,14 +45,12 @@ header {
   text-align: left;
   white-space: normal;  /* Permite salto de línea */
   letter-spacing: 0.05em;
-  padding-left: 20px; /* Margen interno a la izquierda para que no quede pegado al borde */
 }
 
 /* Navegación en el header */
 .header-nav {
   display: flex;
   gap: 30px;
-  padding-right: 20px; /* Margen interno a la derecha para que no quede pegado al borde */
 }
 
 .header-nav a {
@@ -107,9 +109,9 @@ p, a, span, li, div, section, nav {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
-  max-width: 960px; /* Márgenes iguales al resto */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 20px; /* Márgenes laterales iguales */
+  padding: 2rem;
 }
 
 /* Imagen About Me */
@@ -145,8 +147,8 @@ footer {
 
 /* INDEX */
 .areas {
-  max-width: 960px; /* Márgenes iguales */
-  padding: 3rem 20px; /* Márgenes iguales */
+  max-width: 100%;
+  padding: 3rem 2rem;
   transition: transform 0.3s ease; /* Para hover */
 }
 
@@ -202,19 +204,13 @@ footer {
   transform: scale(1.05);
 }
 
-/* Portfolio grid Home */
 .portfolio-grid {
-  max-width: 960px; /* Márgenes iguales */
+  max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-}
-
-/* Para forzar la séptima tarjeta Photography a la primera columna */
-.portfolio-item.photography {
-  grid-column-start: 1;
 }
 
 .portfolio-item {
@@ -257,11 +253,4 @@ footer {
   .portfolio-item img {
     height: 140px;
   }
-}
-
-/* Contact page section */
-.contact-section {
-  max-width: 960px; /* Igual que el resto */
-  margin: 40px auto;
-  padding: 0 20px; /* Márgenes iguales */
 }
