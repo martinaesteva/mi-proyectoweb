@@ -274,24 +274,25 @@ footer {
 .animation-images,
 .3d-images,
 .photography-images {
-  display: block;
-  margin-top: 2rem;
+  max-width: 700px; /* mismo ancho máximo que el texto */
+  margin: 2rem auto 0 auto; /* centrado con margen arriba */
   gap: 1.5rem;
+  display: block;
 }
 
-/* Imágenes dentro de cada contenedor: TODAS al 100% */
+/* Imágenes dentro de cada contenedor: 100% ancho del contenedor padre */
 .branding-images img,
 .editorial-images img,
 .typography-images img,
 .uxui-images img,
 .animation-images img,
-.3d-imgages img,
+.3d-images img,
 .photography-images img {
-  width: 100%;     /* imagen ocupa todo el ancho disponible */
+  width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  margin-top: 1rem; /* separación vertical entre imágenes */
-  display: block;   /* para que no queden inline */
+  margin-top: 1rem;
+  display: block;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
@@ -301,8 +302,6 @@ footer {
 .typography-images img:hover,
 .uxui-images img:hover,
 .animation-images img:hover,
-.3d-images-images img:hover,
+.3d-images img:hover,
 .photography-images img:hover {
   transform: scale(1.05);
-}
-</head>
