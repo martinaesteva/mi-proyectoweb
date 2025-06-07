@@ -17,36 +17,33 @@ body {
 /* Encabezado */
 header {
   background-color: #f5f5f5;
-  height: 70px; /* Ajustado al tamaño de branding.html */
+  height: 100px; /* Más pequeño */
   border-bottom: 2px solid #ddd;
   display: flex;
   align-items: center;
-  padding: 0;
-  margin: 0;
+  padding: 0; /* Sin margen */
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 960px;
-  margin: 0; /* Sin margen */
-  padding: 0;
   width: 100%;
+  padding: 0 20px;
+  margin: 0;
 }
 
 .header-name {
-  font-size: 2.5em;
+  font-size: 1.8em; /* Más pequeño */
   font-weight: 300;
+  line-height: 1; /* Menos interlineado */
   text-align: left;
-  margin-left: 0; /* Pegado a la izquierda */
+  margin: 0;
 }
 
 .header-nav {
   display: flex;
   gap: 30px;
-  margin-right: 0; /* Sin margen derecha */
-  padding-right: 0;
 }
 
 .header-nav a {
