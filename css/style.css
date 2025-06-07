@@ -7,10 +7,12 @@
 
 /* BODY */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #111;
-  background-color: #fff;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
   line-height: 1.6;
+  background-color: #ffffff;
+  color: #111;
+  padding: 20px;
   padding-top: 70px; /* offset for fixed header */
 }
 
@@ -43,13 +45,21 @@ header {
   text-align: left;
   margin: 0;
   letter-spacing: 0.5px;
+  white-space: normal; /* permite salto de línea */
 }
 
 /* NAVIGATION */
+.header-nav {
+  display: flex;
+  gap: 30px;
+}
+
 .header-nav a {
   text-decoration: none;
   color: #111;
-  margin-left: 30px;
+  font-weight: 300;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
   font-size: 1rem;
   position: relative;
   transition: color 0.3s ease;
@@ -78,85 +88,118 @@ header {
 
 /* MAIN */
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 /* ABOUT SECTION */
 .about-container {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .about-img {
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
+  max-width: 100%;
   height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
 }
 
 .about-text {
   flex: 1;
+  min-width: 250px;
 }
 
 .about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+  text-transform: uppercase;
   text-align: left;
 }
 
 /* AREAS INDEX SECTION */
+.areas {
+  max-width: 100%;
+  padding: 3rem 2rem;
+  transition: transform 0.3s ease; /* Para hover */
+}
+
 .areas h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 2.2em;
+  margin-bottom: 2rem;
+  color: #111;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .areas ul {
   list-style: none;
   padding: 0;
-}
-
-.areas li {
-  margin-bottom: 15px;
-}
-
-.areas a {
-  text-decoration: none;
-  color: #111;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: color 0.3s ease;
+  flex-direction: column;
+  gap: 1.8rem;
 }
 
-.areas a:hover {
-  color: #666;
+.areas li a {
+  display: flex;
+  align-items: baseline;
+  font-size: 1.5em;
+  color: #000;
+  text-decoration: none;
+  font-weight: 300;
+  width: 100%;
+  position: relative;
 }
 
-.num {
-  font-weight: bold;
+.areas li a .num {
+  flex: 0 0 50px;
 }
 
-.line {
-  flex-grow: 1;
-  height: 1px;
-  background-color: #ccc;
+.areas li a .line {
+  flex: 1;
+  border-bottom: 1px solid #000;
+  margin: 0 10px;
+  transform: translateY(0.3em);
 }
 
-.title {
-  font-weight: normal;
+.areas li a .title {
+  white-space: nowrap;
+}
+
+.areas li a:hover {
+  color: #007acc;
+}
+
+/* Hover efecto para las secciones principales */
+.elemento-hover:hover {
+  transform: scale(1.05);
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #ccc;
-  margin-top: 40px;
-  font-size: 0.9rem;
+  margin-top: 60px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
   color: #777;
 }
 
@@ -164,4 +207,53 @@ footer {
 h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
+.portfolio-grid {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
 
+.portfolio-item {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #222;
+  text-decoration: none;
+  background: white;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item h3 {
+  padding: 15px 0;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive: reduce image height on small screens */
+@media (max-width: 480px) {
+  .portfolio-item img {
+    height: 140px;
+  }
+}
