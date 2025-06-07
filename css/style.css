@@ -23,9 +23,8 @@ header {
 }
 
 header h1 {
-  font-size: 3em;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
 /* Secciones */
@@ -47,8 +46,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 1.5em;
-  font-size: 1.1em;
+  margin-bottom: 15px;
 }
 
 /* Contenedor About Me */
@@ -62,6 +60,7 @@ p {
   padding: 2rem;
 }
 
+/* Imagen About Me */
 .about-img {
   width: 300px;
   max-width: 100%;
@@ -76,6 +75,7 @@ p {
   transform: scale(1.05);
 }
 
+/* Texto About Me */
 .about-text {
   flex: 1;
   min-width: 250px;
@@ -110,34 +110,35 @@ footer {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .areas li a {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  align-items: baseline;
   font-size: 1.5em;
-  text-decoration: none;
   color: #000;
+  text-decoration: none;
   font-weight: 300;
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 100%;
   position: relative;
-  padding-left: 4rem;
 }
 
-.areas li a::before {
-  content: attr(data-num) " ________________________________ ";
-  color: #ccc;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
+.areas li a .num {
+  flex: 0 0 50px;
+}
+
+.areas li a .line {
+  flex: 1;
+  border-bottom: 1px solid #000;
+  margin: 0 10px;
+  transform: translateY(0.3em); /* alinea con la base del texto */
 }
 
 .areas li a .title {
-  position: relative;
-  z-index: 2;
-  background: white;
-  padding-left: 0.5rem;
+  white-space: nowrap;
+}
+
+.areas li a:hover {
+  color: #007acc;
 }
