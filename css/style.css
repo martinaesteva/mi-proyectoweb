@@ -1,54 +1,49 @@
-/* GENERAL RESET */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 300; /* texto normal ligero */
   line-height: 1.6;
   background-color: #ffffff;
   color: #111;
   padding: 20px;
-  padding-top: 70px; /* offset for fixed header */
 }
 
-/* HEADER */
+/* Encabezado */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  z-index: 1000;
+  background-color: #f5f5f5;
+  height: 70px; /* Altura fija para todos los headers */
+  border-bottom: 2px solid #ddd;
+  display: flex;
+  align-items: center;
 }
 
 .header-container {
-  max-width: 1200px;
-  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .header-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: left;
+  font-size: 2em;       /* Ajustado para que quepa en 70px */
+  font-weight: 300;     /* Aquí mantiene el light */
+  line-height: 1.1;     /* Reduce interlineado para las dos líneas */
   margin: 0;
-  letter-spacing: 0.5px;
-  white-space: normal; /* permite salto de línea */
+  text-align: left;
+  white-space: normal;  /* Permite salto de línea */
+  letter-spacing: 0.05em;
 }
 
-/* NAVIGATION */
+/* Navegación en el header */
 .header-nav {
   display: flex;
   gap: 30px;
@@ -56,44 +51,55 @@ header {
 
 .header-nav a {
   text-decoration: none;
-  color: #111;
+  color: #000;
   font-weight: 300;
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 1rem;
   position: relative;
-  transition: color 0.3s ease;
-}
-
-.header-nav a:hover {
-  color: #666;
+  padding-bottom: 5px;
 }
 
 .header-nav a::after {
-  content: '';
+  content: "";
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 2px;
-  background-color: #111;
-  bottom: -5px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #000;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
   left: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
 }
 
 .header-nav a:hover::after {
-  transform: scaleX(1);
+  width: 100%;
+  background: #007acc;
 }
 
-/* MAIN */
-main {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px;
+/* Mantener los h2 exactamente igual */
+h2 {
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+  text-transform: uppercase;
+  text-align: left;
 }
 
-/* ABOUT SECTION */
+/* Aseguramos que solo headers sean bold, y texto normal no */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* Contenido general sin bold */
+p, a, span, li, div, section, nav {
+  font-weight: 300;
+}
+
+/* Contenedor About Me */
 .about-container {
   display: flex;
   align-items: flex-start;
@@ -101,9 +107,10 @@ main {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem;
 }
 
+/* Imagen About Me */
 .about-img {
   width: 300px;
   max-width: 100%;
@@ -118,22 +125,23 @@ main {
   transform: scale(1.05);
 }
 
+/* Texto About Me */
 .about-text {
   flex: 1;
   min-width: 250px;
 }
 
-.about-text h2 {
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 1.8em;
-  margin-bottom: 15px;
-  color: #333;
-  text-transform: uppercase;
-  text-align: left;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #777;
 }
 
-/* AREAS INDEX SECTION */
+/* INDEX */
 .areas {
   max-width: 100%;
   padding: 3rem 2rem;
@@ -141,12 +149,11 @@ main {
 }
 
 .areas h2 {
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
   font-size: 2.2em;
   margin-bottom: 2rem;
   color: #111;
   text-align: left;
+  font-weight: 300;
   text-transform: uppercase;
 }
 
@@ -191,21 +198,6 @@ main {
 /* Hover efecto para las secciones principales */
 .elemento-hover:hover {
   transform: scale(1.05);
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-  border-top: 1px solid #ddd;
-  font-size: 0.9em;
-  color: #777;
-}
-
-/* HEADERS - JUSTIFY LEFT */
-h1, h2, h3, h4, h5, h6 {
-  text-align: left;
 }
 .portfolio-grid {
   max-width: 1200px;
