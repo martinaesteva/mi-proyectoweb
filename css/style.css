@@ -17,8 +17,10 @@ body {
 /* Encabezado */
 header {
   background-color: #f5f5f5;
-  padding: 40px 0;
+  height: 120px; /* Altura fija para todos los headers */
   border-bottom: 2px solid #ddd;
+  display: flex;
+  align-items: center;
 }
 
 .header-container {
@@ -28,6 +30,7 @@ header {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 
 .header-name {
@@ -35,10 +38,6 @@ header {
   font-weight: 300;
   text-align: left;
   margin: 0;
-
-  /* Estilos nuevos para todos los headers */
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .header-nav {
@@ -51,6 +50,7 @@ header {
   color: #000;
   font-weight: 300;
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase; /* Botones en mayúsculas */
 }
 
 /* Secciones */
@@ -125,6 +125,7 @@ footer {
   color: #111;
   text-align: left;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 .areas ul {
@@ -164,5 +165,4 @@ footer {
 .areas li a:hover {
   color: #007acc;
 }
-
 
