@@ -14,41 +14,46 @@ body {
   padding: 20px;
 }
 
-/* Header Container: flexbox para alinear nombre y nav */
+/* Header: contenedor flexible para alinear izquierda y derecha */
+header {
+  border-bottom: 2px solid #ddd;
+  padding: 20px 40px; /* padding horizontal para no estar pegado a bordes */
+  background-color: #f5f5f5;
+}
+
 .header-container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 20px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* nombre a la izquierda, nav a la derecha */
   align-items: center;
 }
 
-/* Nombre a la izquierda */
+/* Nombre a la izquierda, bold, grande */
 .header-name {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700; /* bold */
-  font-size: 2.8rem;
+  font-size: 3rem;
   line-height: 1.1;
   text-align: left;
   color: #111;
   margin: 0;
 }
 
-/* Nav botones a la derecha */
+/* Navegación a la derecha, light, mayúsculas */
 .header-nav {
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300; /* light */
   text-align: right;
 }
 
-/* Estilo de los links en el nav */
+/* Estilo de los enlaces del nav */
 .header-nav a {
   text-decoration: none;
   color: #111;
   font-size: 1rem;
   text-transform: uppercase;
-  margin-left: 25px;
+  margin-left: 30px;
   letter-spacing: 1px;
   transition: color 0.3s ease;
 }
@@ -57,62 +62,31 @@ body {
   color: #007acc;
 }
 
-/* Secciones */
+/* Main y secciones */
 main {
   max-width: 960px;
   margin: 40px auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 section {
   margin-bottom: 40px;
 }
 
+/* Título INDEX en mayúsculas y alineado izquierda */
 .areas-title {
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 2.2em;
   margin-bottom: 2rem;
   color: #111;
-  text-align: left;  /* Justificado a la izquierda */
-  text-transform: uppercase; /* Mayúsculas */
+  text-align: left;  /* justificado a la izquierda */
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 p {
   margin-bottom: 15px;
-}
-
-/* Contenedor About Me */
-.about-container {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Imagen About Me */
-.about-img {
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.about-img:hover {
-  transform: scale(1.05);
-}
-
-/* Texto About Me */
-.about-text {
-  flex: 1;
-  min-width: 250px;
 }
 
 /* Footer */
@@ -158,7 +132,7 @@ footer {
   flex: 1;
   border-bottom: 1px solid #000;
   margin: 0 10px;
-  transform: translateY(0.3em); /* alinea con la base del texto */
+  transform: translateY(0.3em);
 }
 
 .areas li a .title {
