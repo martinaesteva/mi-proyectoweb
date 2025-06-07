@@ -21,16 +21,20 @@ header {
   border-bottom: 2px solid #ddd;
   display: flex;
   align-items: center;
+  width: 100%; /* que ocupe toda la anchura */
+  padding: 0; /* sin padding */
+  box-sizing: border-box;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* separa extremos */
   align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: 100%; /* ocupa toda la anchura posible */
+  margin: 0; /* sin margen */
+  padding: 0 20px; /* espacio lateral para que no toque bordes */
   width: 100%;
+  box-sizing: border-box;
 }
 
 .header-name {
@@ -199,6 +203,7 @@ footer {
 .elemento-hover:hover {
   transform: scale(1.05);
 }
+
 .portfolio-grid {
   max-width: 1200px;
   margin: 40px auto;
