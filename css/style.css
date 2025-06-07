@@ -106,33 +106,12 @@ p, a, span, li, div, section, nav {
 /* Contenedor About Me */
 .about-container {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Imagen About Me */
-.about-img {
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.about-img:hover {
-  transform: scale(1.05);
-}
-
-/* Texto About Me */
-.about-text {
-  flex: 1;
-  min-width: 250px;
+  padding: 2rem 20px;
+  gap: 1.5rem;
 }
 
 /* Footer */
@@ -143,127 +122,6 @@ footer {
   border-top: 1px solid #ddd;
   font-size: 0.9em;
   color: #777;
-}
-
-/* INDEX */
-.areas {
-  max-width: 100%;
-  padding: 3rem 2rem;
-  transition: transform 0.3s ease; /* Para hover */
-}
-
-.areas h2 {
-  font-size: 2.2em;
-  margin-bottom: 2rem;
-  color: #111;
-  text-align: left;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.areas ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-}
-
-.areas li a {
-  display: flex;
-  align-items: baseline;
-  font-size: 1.5em;
-  color: #000;
-  text-decoration: none;
-  font-weight: 300;
-  width: 100%;
-  position: relative;
-}
-
-.areas li a .num {
-  flex: 0 0 50px;
-}
-
-.areas li a .line {
-  flex: 1;
-  border-bottom: 1px solid #000;
-  margin: 0 10px;
-  transform: translateY(0.3em);
-}
-
-.areas li a .title {
-  white-space: nowrap;
-}
-
-.areas li a:hover {
-  color: #007acc;
-}
-
-/* Hover efecto para las secciones principales */
-.elemento-hover:hover {
-  transform: scale(1.05);
-}
-
-.portfolio-grid {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.portfolio-item {
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #222;
-  text-decoration: none;
-  background: white;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item h3 {
-  padding: 15px 0;
-  font-weight: 600;
-  font-size: 1.2em;
-}
-
-.portfolio-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Responsive: reduce image height on small screens */
-@media (max-width: 480px) {
-  .portfolio-item img {
-    height: 140px;
-  }
-}
-
-/* Contenedor About Me y Branding: márgenes laterales iguales */
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 20px;
-  gap: 1.5rem;
 }
 
 /* Contenedores de imágenes para todas las áreas */
@@ -279,15 +137,10 @@ footer {
   gap: 1.5rem;
 }
 
-/* Imágenes dentro de cada contenedor: TODAS al 100% */
-.branding-images img,
-.editorial-images img,
-.typography-images img,
-.uxui-images img,
-.animation-images img,
-.3dillustration-images img,
-.photography-images img {
-  width: 100%;
+/* Solo cambio aquí: imágenes branding al 100% del contenedor padre */
+.branding-images img {
+  width: 100%; /* para que se adapten al ancho disponible */
+  height: auto; /* para mantener proporción */
   border-radius: 8px;
   object-fit: cover;
   margin-top: 1.5rem;
@@ -295,12 +148,6 @@ footer {
   transition: transform 0.3s ease;
 }
 
-.branding-images img:hover,
-.editorial-images img:hover,
-.typography-images img:hover,
-.uxui-images img:hover,
-.animation-images img:hover,
-.3dillustration-images img:hover,
-.photography-images img:hover {
+.branding-images img:hover {
   transform: scale(1.05);
 }
