@@ -24,7 +24,7 @@ header {
 
 header h1 {
   font-size: 2.5em;
-  font-weight: 300;
+  font-weight: bold; /* AHORA EN NEGRITA */
 }
 
 /* Secciones */
@@ -47,38 +47,6 @@ h2 {
 
 p {
   margin-bottom: 15px;
-}
-
-/* Lista de portfolio */
-.areas ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.areas li {
-  margin-bottom: 10px;
-}
-
-.areas a {
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  text-decoration: none;
-  color: #007acc;
-  font-weight: 300;
-}
-
-.areas a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-  border-top: 1px solid #ddd;
-  font-size: 0.9em;
-  color: #777;
 }
 
 /* Contenedor About Me */
@@ -112,12 +80,11 @@ footer {
   flex: 1;
   min-width: 250px;
 }
-/* ESTILOS DEL INDEX (área de secciones) */
+
+/* Index estilizado con número izquierda y título derecha */
 .areas {
-  max-width: 800px;
-  margin: 0 auto; /* CENTRA la caja */
+  max-width: 100%;
   padding: 3rem 2rem;
-  text-align: left; /* TEXTO alineado a la izquierda */
 }
 
 .areas h2 {
@@ -137,16 +104,37 @@ footer {
 }
 
 .areas li a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
   font-size: 1.5em;
-  color: #000;
   text-decoration: none;
-  font-weight: 300; /* Usa Helvetica Light si está bien importada */
-  border-left: 4px solid #007acc;
-  padding-left: 1rem;
-  transition: all 0.3s ease;
+  color: #000;
+  font-weight: 300;
+  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.areas .num {
+  font-weight: bold;
+  text-align: left;
+  min-width: 40px;
+}
+
+.areas .line {
+  height: 1px;
+  background-color: #ccc;
+  flex-grow: 1;
+  display: block;
+}
+
+.areas .title {
+  text-align: right;
+  font-weight: 300;
 }
 
 .areas li a:hover {
   color: #007acc;
   transform: translateX(5px);
+  transition: 0.3s;
 }
