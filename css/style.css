@@ -39,8 +39,7 @@ header {
   font-size: 2.5em;
   font-weight: 300;
   text-align: left;
-  margin-left: 0;
-  line-height: 1; /* <-- Esto reduce el espacio entre líneas */
+  margin-left: 0; /* Pegado a la izquierda */
 }
 
 .header-nav {
