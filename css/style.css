@@ -35,6 +35,10 @@ header {
   font-weight: 300;
   text-align: left;
   margin: 0;
+
+  /* Estilos nuevos para todos los headers */
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .header-nav {
@@ -121,7 +125,6 @@ footer {
   color: #111;
   text-align: left;
   font-weight: 300;
-  
 }
 
 .areas ul {
