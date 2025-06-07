@@ -17,14 +17,50 @@ body {
 /* Encabezado */
 header {
   background-color: #f5f5f5;
-  padding: 40px 0;
-  text-align: center;
+  padding: 20px 40px;
   border-bottom: 2px solid #ddd;
 }
 
-header h1 {
-  font-size: 2.5em;
-  font-weight: 700;
+.header-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Título pequeño justificado a la izquierda */
+.site-title {
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: left;
+  color: #111;
+}
+
+/* Navbar en la parte derecha */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-btn {
+  font-weight: 300;
+  font-size: 1em;
+  color: #111;
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.nav-btn:hover,
+.nav-btn:focus {
+  border-color: #007acc;
+  color: #007acc;
+  background-color: #e6f0fa;
 }
 
 /* Secciones */
