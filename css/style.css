@@ -36,9 +36,11 @@ header {
 }
 
 .header-name {
+.header-name {
   font-size: 2.5em;
   font-weight: 300;
   text-align: left;
+  line-height: 1; 
   margin-left: 0; /* Pegado a la izquierda */
 }
 
