@@ -14,49 +14,45 @@ body {
   padding: 20px;
 }
 
-/* HEADER */
-header {
-  border-bottom: 2px solid #ddd;
-  padding: 20px 0;
-  background-color: #f5f5f5;
-}
-
+/* Header Container: flexbox para alinear nombre y nav */
 .header-container {
   max-width: 960px;
   margin: 0 auto;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Nombre en dos líneas justificado a la izquierda */
-.site-title {
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 1.8em;
+/* Nombre a la izquierda */
+.header-name {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700; /* bold */
+  font-size: 2.8rem;
+  line-height: 1.1;
   text-align: left;
-  line-height: 1.2;
-  user-select: none;
+  color: #111;
 }
 
-/* Navegación botones a la derecha, inline, en mayúsculas */
-.nav-menu {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-btn {
+/* Nav botones a la derecha */
+.header-nav {
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  color: #000;
+  font-weight: 300; /* light */
+  text-align: right;
+}
+
+/* Estilo de los links en el nav */
+.header-nav a {
   text-decoration: none;
-  padding: 5px 8px;
+  color: #111;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-left: 25px;
+  letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
-.nav-btn:hover {
+.header-nav a:hover {
   color: #007acc;
 }
 
@@ -165,7 +161,7 @@ footer {
   flex: 1;
   border-bottom: 1px solid #000;
   margin: 0 10px;
-  transform: translateY(0.3em);
+  transform: translateY(0.3em); /* alinea con la base del texto */
 }
 
 .areas li a .title {
