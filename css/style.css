@@ -112,3 +112,41 @@ footer {
   flex: 1;
   min-width: 250px;
 }
+/* ESTILOS DEL INDEX (área de secciones) */
+.areas {
+  max-width: 800px;
+  margin: 0 auto; /* CENTRA la caja */
+  padding: 3rem 2rem;
+  text-align: left; /* TEXTO alineado a la izquierda */
+}
+
+.areas h2 {
+  font-size: 2.2em;
+  margin-bottom: 1.5rem;
+  color: #111;
+  text-align: center;
+  font-weight: 600;
+}
+
+.areas ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.areas li a {
+  font-size: 1.5em;
+  color: #000;
+  text-decoration: none;
+  font-weight: 300; /* Usa Helvetica Light si está bien importada */
+  border-left: 4px solid #007acc;
+  padding-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.areas li a:hover {
+  color: #007acc;
+  transform: translateX(5px);
+}
