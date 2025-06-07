@@ -285,7 +285,7 @@ footer {
 .typography-images img,
 .uxui-images img,
 .animation-images img,
-.3d-img,
+.3d-imgages img,
 .photography-images img {
   width: 100%;     /* imagen ocupa todo el ancho disponible */
   border-radius: 8px;
@@ -301,7 +301,7 @@ footer {
 .typography-images img:hover,
 .uxui-images img:hover,
 .animation-images img:hover,
-.3d-images img:hover,
+.3d-images-images img:hover,
 .photography-images img:hover {
   transform: scale(1.05);
 }
