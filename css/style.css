@@ -362,3 +362,24 @@ footer {
 }
 
 /* Y así sucesivamente si quieres más delays para imágenes adicionales */
+/* Navegación normal - horizontal */
+.header-nav {
+  display: flex;
+  gap: 30px;
+}
+
+/* Responsive: menú vertical en pantallas pequeñas */
+@media (max-width: 600px) {
+  .header-nav {
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f5f5f5; /* opcional para diferenciar */
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  .header-nav a {
+    padding: 10px 0;
+    font-size: 1.2em;
+  }
+}
