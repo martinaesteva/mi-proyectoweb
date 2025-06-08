@@ -97,7 +97,6 @@ p, a, span, li, div, section, nav {
   font-weight: 300;
 }
 
-
 .about-container {
   display: flex;
   flex-direction: column;
@@ -108,10 +107,10 @@ p, a, span, li, div, section, nav {
   gap: 1.5rem;
 }
 
-  .about-text {
-    min-width: auto; /* Quitar ancho mínimo para que ajuste */
-    text-align: center;
-  }
+.about-text {
+  min-width: auto; /* Quitar ancho mínimo para que ajuste */
+  text-align: center;
+}
 
 .about-img {
   width: 300px;
@@ -358,6 +357,7 @@ footer {
     padding: 6px 10px;
   }
 }
+
 /* ======== ESTILOS EXCLUSIVOS DE ABOUT ME ======== */
 .aboutme-wrapper {
   max-width: 1200px;
@@ -399,6 +399,21 @@ footer {
   text-transform: uppercase;
 }
 
+/* Video wrapper y video: siempre aplicar */
+.animation-video-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.animation-video-wrapper video.animation-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 @media (max-width: 768px) {
   .aboutme-container {
     flex-direction: column;
@@ -413,17 +428,4 @@ footer {
   .aboutme-text h2 {
     text-align: center;
   }
-  
-.animation-video-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.animation-video-wrapper video.animation-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
