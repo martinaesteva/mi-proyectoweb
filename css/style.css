@@ -303,3 +303,62 @@ footer {
   margin-top: 2rem;
   display: block;
 }
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplica fade-in a imágenes específicas */
+.editorial-images img,
+.typography-images img,
+.animation-images img,
+.threed-images img,
+.uxui-images img,
+.photography-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+  
+  /* Animación */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Opcional: escalonar animación para que no aparezcan todas a la vez */
+.editorial-images img:nth-child(1),
+.typography-images img:nth-child(1),
+.animation-images img:nth-child(1),
+.threed-images img:nth-child(1),
+.uxui-images img:nth-child(1),
+.photography-images img:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.editorial-images img:nth-child(2),
+.typography-images img:nth-child(2),
+.animation-images img:nth-child(2),
+.threed-images img:nth-child(2),
+.uxui-images img:nth-child(2),
+.photography-images img:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.editorial-images img:nth-child(3),
+.typography-images img:nth-child(3),
+.animation-images img:nth-child(3),
+.threed-images img:nth-child(3),
+.uxui-images img:nth-child(3),
+.photography-images img:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+/* Y así sucesivamente si quieres más delays para imágenes adicionales */
