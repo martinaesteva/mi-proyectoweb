@@ -47,7 +47,6 @@ header {
   letter-spacing: 0.05em;
 }
 
-
 /* Navegación header */
 .header-nav {
   display: flex;
@@ -196,13 +195,13 @@ footer {
   height: 1px;
   width: 100%;
   background-color: #000;
-  transform: translateX(0);
+  transform: translateX(0); /* visible por defecto */
   transition: transform 0.4s ease;
 }
 
 .areas li a:hover .line::after {
   transform: translateX(-100%);
-  animation: drawLine 0.4s forwards;
+  animation: drawLine 0.4s forwards 0.4s; /* espera 0.4s y dibuja */
 }
 
 @keyframes drawLine {
@@ -283,10 +282,8 @@ footer {
   height: auto;
   display: block;
   margin-bottom: 30px;
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.3s;
-  transition: transform 0.3s ease;
+  opacity: 1; /* asegúrate que estén visibles */
+  transition: transform 0.3s ease; /* transición suave */
 }
 
 .editorial-images img:hover,
@@ -296,7 +293,7 @@ footer {
 .uxui-images img:hover,
 .photography-images img:hover,
 .branding-images img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* escala un 5% más grande */
 }
 
 /* Animación fadeInUp */
@@ -355,28 +352,4 @@ footer {
     font-size: 0.9em; /* reducir tamaño de fuente */
     padding: 6px 10px;
   }
-}
-.editorial-images img,
-.typography-images img,
-.animation-images img,
-.threed-images img,
-.uxui-images img,
-.photography-images img,
-.branding-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 30px;
-  opacity: 1; /* asegúrate que estén visibles */
-  transition: transform 0.3s ease; /* transición suave */
-}
-
-.editorial-images img:hover,
-.typography-images img:hover,
-.animation-images img:hover,
-.threed-images img:hover,
-.uxui-images img:hover,
-.photography-images img:hover,
-.branding-images img:hover {
-  transform: scale(1.05); /* escala un 5% más grande */
 }
