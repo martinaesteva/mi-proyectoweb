@@ -322,3 +322,114 @@ footer {
     font-size: 1.2em;
   }
 }
+/* Efecto zoom + desenfoque para imágenes en portfolio */
+.portfolio-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Sombra dinámica en hover */
+.portfolio-item {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #222;
+  text-decoration: none;
+  background: white;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive para imágenes del grid en móvil */
+@media (max-width: 480px) {
+  .portfolio-item img {
+    height: 140px;
+  }
+}
+
+/* Efecto de zoom suave en imágenes de las secciones del portfolio */
+.editorial-images img,
+.typography-images img,
+.animation-images img,
+.threed-images img,
+.uxui-images img,
+.photography-images img,
+.branding-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+
+  /* Fade-in + zoom */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+  transition: transform 0.3s ease;
+}
+
+.editorial-images img:hover,
+.typography-images img:hover,
+.animation-images img:hover,
+.threed-images img:hover,
+.uxui-images img:hover,
+.photography-images img:hover,
+.branding-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para el fadeIn */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación escalonada (opcional) */
+.editorial-images img:nth-child(1),
+.typography-images img:nth-child(1),
+.animation-images img:nth-child(1),
+.threed-images img:nth-child(1),
+.uxui-images img:nth-child(1),
+.photography-images img:nth-child(1),
+.branding-images img:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.editorial-images img:nth-child(2),
+.typography-images img:nth-child(2),
+.animation-images img:nth-child(2),
+.threed-images img:nth-child(2),
+.uxui-images img:nth-child(2),
+.photography-images img:nth-child(2),
+.branding-images img:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.editorial-images img:nth-child(3),
+.typography-images img:nth-child(3),
+.animation-images img:nth-child(3),
+.threed-images img:nth-child(3),
+.uxui-images img:nth-child(3),
+.photography-images img:nth-child(3),
+.branding-images img:nth-child(3) {
+  animation-delay: 0.5s;
+}
