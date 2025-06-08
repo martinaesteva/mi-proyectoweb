@@ -272,3 +272,16 @@ footer {
   display: block;
   margin-bottom: 30px;
 }
+
+/* Estilos específicos para cada sección del portfolio */
+.editorial-images img,
+.typography-images img,
+.animation-images img,
+.threed-images img,
+.uxui-images img,
+.photography-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+}
