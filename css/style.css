@@ -38,14 +38,15 @@ header {
 }
 
 .header-name {
-  font-size: 2em;
+  font-size: 1.5em;       /* tamaño similar a branding */
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1;
   margin: 0;
   text-align: left;
-  white-space: normal;
+  white-space: nowrap;    /* fuerza una línea */
   letter-spacing: 0.05em;
 }
+
 
 /* Navegación header */
 .header-nav {
