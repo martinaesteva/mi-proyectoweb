@@ -97,15 +97,27 @@ p, a, span, li, div, section, nav {
   font-weight: 300;
 }
 
-/* About Me container */
+
 .about-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;  /* Cambiado a fila */
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 20px;
   gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;  /* En pantallas pequeñas se apilan */
+    align-items: center;     /* Centrar imagen y texto */
+  }
+
+  .about-text {
+    min-width: auto; /* Quitar ancho mínimo para que ajuste */
+    text-align: center;
+  }
 }
 
 .about-img {
