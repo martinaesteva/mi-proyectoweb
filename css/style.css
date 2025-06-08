@@ -179,12 +179,38 @@ footer {
 
 .areas li a .line {
   flex: 1;
-  height: 1px;
-  background-color: #000;
+  border-bottom: 1px solid #000;
   margin: 0 10px;
-  transform: scaleX(0);
-  transform-origin: left;
+  transform: translateY(0.3em);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea visible por defecto + animación al hover */
+.areas li a .line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
+  transform: translateX(0);
   transition: transform 0.4s ease;
+}
+
+.areas li a:hover .line::after {
+  transform: translateX(-100%);
+  animation: drawLine 0.4s forwards;
+}
+
+@keyframes drawLine {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .areas li a .title {
@@ -195,10 +221,6 @@ footer {
 .areas li a:hover {
   transform: scale(1.05);
   color: #007acc;
-}
-
-.areas li a:hover .line {
-  transform: scaleX(1);
 }
 
 /* Portfolio Grid */
@@ -228,13 +250,7 @@ footer {
   height: 180px;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item h3 {
-  padding: 15px 0;
-  font-weight: 600;
-  font-size: 1.2em;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .portfolio-item:hover {
@@ -243,7 +259,8 @@ footer {
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(0.9) contrast(1.1);
 }
 
 /* Responsive imágenes */
@@ -253,18 +270,7 @@ footer {
   }
 }
 
-/* Fade-in animación */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Efecto zoom + fade in para secciones de imágenes */
 .editorial-images img,
 .typography-images img,
 .animation-images img,
@@ -276,105 +282,6 @@ footer {
   height: auto;
   display: block;
   margin-bottom: 30px;
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.3s;
-}
-
-/* Delay escalonado para primeras imágenes */
-.editorial-images img:nth-child(1),
-.typography-images img:nth-child(1),
-.animation-images img:nth-child(1),
-.threed-images img:nth-child(1),
-.uxui-images img:nth-child(1),
-.photography-images img:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.editorial-images img:nth-child(2),
-.typography-images img:nth-child(2),
-.animation-images img:nth-child(2),
-.threed-images img:nth-child(2),
-.uxui-images img:nth-child(2),
-.photography-images img:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.editorial-images img:nth-child(3),
-.typography-images img:nth-child(3),
-.animation-images img:nth-child(3),
-.threed-images img:nth-child(3),
-.uxui-images img:nth-child(3),
-.photography-images img:nth-child(3) {
-  animation-delay: 0.5s;
-}
-
-/* Responsive navegación */
-@media (max-width: 600px) {
-  .header-nav {
-    flex-direction: column;
-    gap: 15px;
-    background-color: #f5f5f5;
-    padding: 10px 20px;
-    border-radius: 8px;
-  }
-
-  .header-nav a {
-    padding: 10px 0;
-    font-size: 1.2em;
-  }
-}
-/* Efecto zoom + desenfoque para imágenes en portfolio */
-.portfolio-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.08);
-  filter: brightness(0.9) contrast(1.1);
-}
-
-/* Sombra dinámica en hover */
-.portfolio-item {
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #222;
-  text-decoration: none;
-  background: white;
-}
-
-.portfolio-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive para imágenes del grid en móvil */
-@media (max-width: 480px) {
-  .portfolio-item img {
-    height: 140px;
-  }
-}
-
-/* Efecto de zoom suave en imágenes de las secciones del portfolio */
-.editorial-images img,
-.typography-images img,
-.animation-images img,
-.threed-images img,
-.uxui-images img,
-.photography-images img,
-.branding-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 30px;
-
-  /* Fade-in + zoom */
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
@@ -391,7 +298,7 @@ footer {
   transform: scale(1.05);
 }
 
-/* Estilo para el fadeIn */
+/* Animación fadeInUp */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -403,7 +310,7 @@ footer {
   }
 }
 
-/* Animación escalonada (opcional) */
+/* Animación escalonada para imágenes */
 .editorial-images img:nth-child(1),
 .typography-images img:nth-child(1),
 .animation-images img:nth-child(1),
@@ -432,4 +339,20 @@ footer {
 .photography-images img:nth-child(3),
 .branding-images img:nth-child(3) {
   animation-delay: 0.5s;
+}
+
+/* Responsive navegación */
+@media (max-width: 600px) {
+  .header-nav {
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  .header-nav a {
+    padding: 10px 0;
+    font-size: 1.2em;
+  }
 }
