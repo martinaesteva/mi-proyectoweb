@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300; /* texto normal ligero */
+  font-weight: 300;
   line-height: 1.6;
   background-color: #ffffff;
   color: #111;
@@ -17,37 +17,37 @@ body {
 /* Encabezado */
 header {
   background-color: #f5f5f5;
-  height: 70px; /* Altura fija para todos los headers */
+  height: 70px;
   border-bottom: 2px solid #ddd;
   display: flex;
   align-items: center;
-  width: 100%; /* que ocupe toda la anchura */
-  padding: 0; /* sin padding */
+  width: 100%;
+  padding: 0;
   box-sizing: border-box;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between; /* separa extremos */
+  justify-content: space-between;
   align-items: center;
-  max-width: 100%; /* ocupa toda la anchura posible */
-  margin: 0; /* sin margen */
-  padding: 0 20px; /* espacio lateral para que no toque bordes */
+  max-width: 100%;
+  margin: 0;
+  padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .header-name {
-  font-size: 2em;       /* Ajustado para que quepa en 70px */
-  font-weight: 300;     /* Aquí mantiene el light */
-  line-height: 1.1;     /* Reduce interlineado para las dos líneas */
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.1;
   margin: 0;
   text-align: left;
-  white-space: normal;  /* Permite salto de línea */
+  white-space: normal;
   letter-spacing: 0.05em;
 }
 
-/* Navegación en el header */
+/* Navegación header */
 .header-nav {
   display: flex;
   gap: 30px;
@@ -68,13 +68,10 @@ header {
   position: absolute;
   width: 0;
   height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
+  bottom: 0;
+  left: 0;
   background: #000;
   transition: width 0.3s ease;
-  -webkit-transition: width 0.3s ease;
-  left: 0;
 }
 
 .header-nav a:hover::after {
@@ -82,10 +79,12 @@ header {
   background: #007acc;
 }
 
-/* Mantener los h2 exactamente igual */
-h2 {
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+}
+
+h2 {
   font-size: 1.8em;
   margin-bottom: 15px;
   color: #333;
@@ -93,28 +92,22 @@ h2 {
   text-align: left;
 }
 
-/* Aseguramos que solo headers sean bold, y texto normal no */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-}
-
-/* Contenido general sin bold */
+/* Texto normal */
 p, a, span, li, div, section, nav {
   font-weight: 300;
 }
 
-/* Contenedor About Me */
+/* About Me container */
 .about-container {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 20px;
+  gap: 1.5rem;
 }
 
-/* Imagen About Me */
 .about-img {
   width: 300px;
   max-width: 100%;
@@ -129,7 +122,6 @@ p, a, span, li, div, section, nav {
   transform: scale(1.05);
 }
 
-/* Texto About Me */
 .about-text {
   flex: 1;
   min-width: 250px;
@@ -145,13 +137,11 @@ footer {
   color: #777;
 }
 
-/* INDEX */
-/* Ajuste para que el área respete márgenes laterales y no ocupe 100% ancho */
+/* INDEX estilos */
 .areas {
-  max-width: 1200px;  /* igual que otros contenedores */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 20px;
-  transition: transform 0.3s ease; /* Para hover */
 }
 
 .areas h2 {
@@ -180,6 +170,7 @@ footer {
   font-weight: 300;
   width: 100%;
   position: relative;
+  transition: transform 0.3s ease;
 }
 
 .areas li a .num {
@@ -188,24 +179,29 @@ footer {
 
 .areas li a .line {
   flex: 1;
-  border-bottom: 1px solid #000;
+  height: 1px;
+  background-color: #000;
   margin: 0 10px;
-  transform: translateY(0.3em);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
 
 .areas li a .title {
   white-space: nowrap;
 }
 
+/* Hover efecto */
 .areas li a:hover {
+  transform: scale(1.05);
   color: #007acc;
 }
 
-/* Hover efecto para las secciones principales */
-.elemento-hover:hover {
-  transform: scale(1.05);
+.areas li a:hover .line {
+  transform: scaleX(1);
 }
 
+/* Portfolio Grid */
 .portfolio-grid {
   max-width: 1200px;
   margin: 40px auto;
@@ -250,60 +246,14 @@ footer {
   transform: scale(1.05);
 }
 
-/* Responsive: reduce image height on small screens */
+/* Responsive imágenes */
 @media (max-width: 480px) {
   .portfolio-item img {
     height: 140px;
   }
 }
 
-/* Contenedor About Me y Branding: márgenes laterales iguales */
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 20px;
-  gap: 1.5rem;
-}
-
-.branding-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 30px;
-}
-
-/* Estilos específicos para cada sección del portfolio */
-.editorial-images img,
-.typography-images img,
-.animation-images img,
-.threed-images img,
-.uxui-images img,
-.photography-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 30px;
-}
-
-.photography-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 30px;
-}
-
-/* Video animation con ancho y margen */
-.animation-video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 2rem;
-  display: block;
-}
-/* Fade-in animation */
+/* Fade-in animación */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -315,25 +265,23 @@ footer {
   }
 }
 
-/* Aplica fade-in a imágenes específicas */
 .editorial-images img,
 .typography-images img,
 .animation-images img,
 .threed-images img,
 .uxui-images img,
-.photography-images img {
+.photography-images img,
+.branding-images img {
   width: 100%;
   height: auto;
   display: block;
   margin-bottom: 30px;
-  
-  /* Animación */
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
 }
 
-/* Opcional: escalonar animación para que no aparezcan todas a la vez */
+/* Delay escalonado para primeras imágenes */
 .editorial-images img:nth-child(1),
 .typography-images img:nth-child(1),
 .animation-images img:nth-child(1),
@@ -342,7 +290,6 @@ footer {
 .photography-images img:nth-child(1) {
   animation-delay: 0.1s;
 }
-
 .editorial-images img:nth-child(2),
 .typography-images img:nth-child(2),
 .animation-images img:nth-child(2),
@@ -351,7 +298,6 @@ footer {
 .photography-images img:nth-child(2) {
   animation-delay: 0.3s;
 }
-
 .editorial-images img:nth-child(3),
 .typography-images img:nth-child(3),
 .animation-images img:nth-child(3),
@@ -361,19 +307,12 @@ footer {
   animation-delay: 0.5s;
 }
 
-/* Y así sucesivamente si quieres más delays para imágenes adicionales */
-/* Navegación normal - horizontal */
-.header-nav {
-  display: flex;
-  gap: 30px;
-}
-
-/* Responsive: menú vertical en pantallas pequeñas */
+/* Responsive navegación */
 @media (max-width: 600px) {
   .header-nav {
     flex-direction: column;
     gap: 15px;
-    background-color: #f5f5f5; /* opcional para diferenciar */
+    background-color: #f5f5f5;
     padding: 10px 20px;
     border-radius: 8px;
   }
