@@ -112,7 +112,6 @@ p, a, span, li, div, section, nav {
     min-width: auto; /* Quitar ancho mínimo para que ajuste */
     text-align: center;
   }
-}
 
 .about-img {
   width: 300px;
