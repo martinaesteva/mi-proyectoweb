@@ -146,9 +146,11 @@ footer {
 }
 
 /* INDEX */
+/* Ajuste para que el área respete márgenes laterales y no ocupe 100% ancho */
 .areas {
-  max-width: 100%;
-  padding: 3rem 2rem;
+  max-width: 1200px;  /* igual que otros contenedores */
+  margin: 0 auto;
+  padding: 3rem 20px;
   transition: transform 0.3s ease; /* Para hover */
 }
 
@@ -285,12 +287,15 @@ footer {
   display: block;
   margin-bottom: 30px;
 }
+
 .photography-images img {
   width: 100%;
   height: auto;
   display: block;
   margin-bottom: 30px;
 }
+
+/* Video animation con ancho y margen */
 .animation-video {
   width: 100%;
   height: auto;
