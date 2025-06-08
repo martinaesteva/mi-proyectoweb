@@ -285,3 +285,9 @@ footer {
   display: block;
   margin-bottom: 30px;
 }
+.photography-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+}
