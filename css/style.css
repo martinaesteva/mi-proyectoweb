@@ -291,3 +291,10 @@ footer {
   display: block;
   margin-bottom: 30px;
 }
+.animation-video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 2rem;
+  display: block;
+}
