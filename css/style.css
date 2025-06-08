@@ -413,4 +413,17 @@ footer {
   .aboutme-text h2 {
     text-align: center;
   }
+
+.animation-video-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.animation-video-wrapper video.animation-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
