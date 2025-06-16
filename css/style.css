@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300; /* texto normal ligero */
+  font-weight: 300;
   line-height: 1.6;
   background-color: #ffffff;
   color: #111;
@@ -17,37 +17,37 @@ body {
 /* Encabezado */
 header {
   background-color: #f5f5f5;
-  height: 70px; /* Altura fija para todos los headers */
+  height: 70px;
   border-bottom: 2px solid #ddd;
   display: flex;
   align-items: center;
-  width: 100%; /* que ocupe toda la anchura */
-  padding: 0; /* sin padding */
+  width: 100%;
+  padding: 0;
   box-sizing: border-box;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between; /* separa extremos */
+  justify-content: space-between;
   align-items: center;
-  max-width: 100%; /* ocupa toda la anchura posible */
-  margin: 0; /* sin margen */
-  padding: 0 20px; /* espacio lateral para que no toque bordes */
+  max-width: 100%;
+  margin: 0;
+  padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .header-name {
-  font-size: 2em;       /* Ajustado para que quepa en 70px */
-  font-weight: 300;     /* Aquí mantiene el light */
-  line-height: 1.1;     /* Reduce interlineado para las dos líneas */
+  font-size: 1.5em;       /* tamaño similar a branding */
+  font-weight: 300;
+  line-height: 1;
   margin: 0;
   text-align: left;
-  white-space: normal;  /* Permite salto de línea */
+  white-space: nowrap;    /* fuerza una línea */
   letter-spacing: 0.05em;
 }
 
-/* Navegación en el header */
+/* Navegación header */
 .header-nav {
   display: flex;
   gap: 30px;
@@ -68,13 +68,10 @@ header {
   position: absolute;
   width: 0;
   height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
+  bottom: 0;
+  left: 0;
   background: #000;
   transition: width 0.3s ease;
-  -webkit-transition: width 0.3s ease;
-  left: 0;
 }
 
 .header-nav a:hover::after {
@@ -82,10 +79,12 @@ header {
   background: #007acc;
 }
 
-/* Mantener los h2 exactamente igual */
-h2 {
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+}
+
+h2 {
   font-size: 1.8em;
   margin-bottom: 15px;
   color: #333;
@@ -93,28 +92,26 @@ h2 {
   text-align: left;
 }
 
-/* Aseguramos que solo headers sean bold, y texto normal no */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-}
-
-/* Contenido general sin bold */
+/* Texto normal */
 p, a, span, li, div, section, nav {
   font-weight: 300;
 }
 
-/* Contenedor About Me */
 .about-container {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 20px;
+  gap: 1.5rem;
 }
 
-/* Imagen About Me */
+.about-text {
+  min-width: auto; /* Quitar ancho mínimo para que ajuste */
+  text-align: center;
+}
+
 .about-img {
   width: 300px;
   max-width: 100%;
@@ -129,7 +126,6 @@ p, a, span, li, div, section, nav {
   transform: scale(1.05);
 }
 
-/* Texto About Me */
 .about-text {
   flex: 1;
   min-width: 250px;
@@ -145,11 +141,11 @@ footer {
   color: #777;
 }
 
-/* INDEX */
+/* INDEX estilos */
 .areas {
-  max-width: 100%;
-  padding: 3rem 2rem;
-  transition: transform 0.3s ease; /* Para hover */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 20px;
 }
 
 .areas h2 {
@@ -178,6 +174,7 @@ footer {
   font-weight: 300;
   width: 100%;
   position: relative;
+  transition: transform 0.3s ease;
 }
 
 .areas li a .num {
@@ -189,21 +186,48 @@ footer {
   border-bottom: 1px solid #000;
   margin: 0 10px;
   transform: translateY(0.3em);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea visible por defecto + animación al hover */
+.areas li a .line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
+  transform: translateX(0); /* visible por defecto */
+  transition: transform 0.4s ease;
+}
+
+.areas li a:hover .line::after {
+  transform: translateX(-100%);
+  animation: drawLine 0.4s forwards 0.4s; /* espera 0.4s y dibuja */
+}
+
+@keyframes drawLine {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .areas li a .title {
   white-space: nowrap;
 }
 
+/* Hover efecto */
 .areas li a:hover {
+  transform: scale(1.05);
   color: #007acc;
 }
 
-/* Hover efecto para las secciones principales */
-.elemento-hover:hover {
-  transform: scale(1.05);
-}
-
+/* Portfolio Grid */
 .portfolio-grid {
   max-width: 1200px;
   margin: 40px auto;
@@ -230,13 +254,7 @@ footer {
   height: 180px;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item h3 {
-  padding: 15px 0;
-  font-weight: 600;
-  font-size: 1.2em;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .portfolio-item:hover {
@@ -245,62 +263,169 @@ footer {
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(0.9) contrast(1.1);
 }
 
-/* Responsive: reduce image height on small screens */
+/* Responsive imágenes */
 @media (max-width: 480px) {
   .portfolio-item img {
     height: 140px;
   }
 }
 
-/* Contenedor About Me y Branding: márgenes laterales iguales */
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 20px;
-  gap: 1.5rem;
-}
-
-/* Contenedores de imágenes para todas las áreas */
-.branding-images,
-.editorial-images,
-.typography-images,
-.uxui-images,
-.animation-images,
-.3dillustration-images,
-.photography-images {
-  display: block;
-  margin-top: 2rem;
-  gap: 1.5rem;
-}
-
-/* Imágenes dentro de cada contenedor: TODAS al 100% */
-.branding-images img,
+/* Efecto zoom + fade in para secciones de imágenes */
 .editorial-images img,
 .typography-images img,
-.uxui-images img,
 .animation-images img,
-.3dillustration-images img,
-.photography-images img {
+.threed-images img,
+.uxui-images img,
+.photography-images img,
+.branding-images img {
   width: 100%;
-  border-radius: 8px;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+  opacity: 1; /* asegúrate que estén visibles */
+  transition: transform 0.3s ease; /* transición suave */
+}
+
+.editorial-images img:hover,
+.typography-images img:hover,
+.animation-images img:hover,
+.threed-images img:hover,
+.uxui-images img:hover,
+.photography-images img:hover,
+.branding-images img:hover {
+  transform: scale(1.05); /* escala un 5% más grande */
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación escalonada para imágenes */
+.editorial-images img:nth-child(1),
+.typography-images img:nth-child(1),
+.animation-images img:nth-child(1),
+.threed-images img:nth-child(1),
+.uxui-images img:nth-child(1),
+.photography-images img:nth-child(1),
+.branding-images img:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.editorial-images img:nth-child(2),
+.typography-images img:nth-child(2),
+.animation-images img:nth-child(2),
+.threed-images img:nth-child(2),
+.uxui-images img:nth-child(2),
+.photography-images img:nth-child(2),
+.branding-images img:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.editorial-images img:nth-child(3),
+.typography-images img:nth-child(3),
+.animation-images img:nth-child(3),
+.threed-images img:nth-child(3),
+.uxui-images img:nth-child(3),
+.photography-images img:nth-child(3),
+.branding-images img:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@media (max-width: 600px) {
+  .header-nav {
+    flex-direction: row; /* mantener horizontal */
+    flex-wrap: wrap; /* permitir que salte a una nueva línea si es necesario */
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 5px 10px;
+  }
+
+  .header-nav a {
+    font-size: 0.9em; /* reducir tamaño de fuente */
+    padding: 6px 10px;
+  }
+}
+
+/* ======== ESTILOS EXCLUSIVOS DE ABOUT ME ======== */
+.aboutme-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 20px;
+}
+
+.aboutme-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.aboutme-img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
-  margin-top: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
-.branding-images img:hover,
-.editorial-images img:hover,
-.typography-images img:hover,
-.uxui-images img:hover,
-.animation-images img:hover,
-.3dillustration-images img:hover,
-.photography-images img:hover {
+.aboutme-img:hover {
   transform: scale(1.05);
+}
+
+.aboutme-text {
+  flex: 1;
+  text-align: left;
+}
+
+.aboutme-text h2 {
+  font-size: 2.2em;
+  margin-bottom: 2rem;
+  color: #111;
+  text-align: left;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* Video wrapper y video: siempre aplicar */
+.animation-video-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.animation-video-wrapper video.animation-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .aboutme-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .aboutme-text {
+    text-align: center;
+  }
+
+  .aboutme-text h2 {
+    text-align: center;
+  }
 }

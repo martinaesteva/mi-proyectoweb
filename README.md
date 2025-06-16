@@ -6,12 +6,19 @@ El objetivo principal ha sido crear una web profesional, técnicamente funcional
 
 ## Estructura del proyecto
 
+
 - `home.html`: Página principal con navegación a secciones, about me e informacion de contacto.
 - `/aboutme/`: página de apartado about me desarrollando mi perfil profesional.
 - `/contact/`: Páginas de contacto.
 - `/secciones/`: Páginas individuales para cada categoría de trabajo (Branding, Editorial, UX/UI...).
 - `/css/`: Archivos de estilos CSS.
 - `/img/`: Recursos gráficos, tipografías y vídeos.
+=======
+- Página principal con sección “About Me”
+- Índice con enlaces a 7 páginas individuales de proyectos
+- Diseño limpio, responsive y funcional
+- Técnicas utilizadas: CSS modular, navegación multipágina, estilos personalizados, uso de Git y GitHub Pages
+>>>>>>> 24f8661b77319099e086833566e98a7c647b60d1
 
 ##  Características destacadas
 
@@ -36,3 +43,6 @@ Gracias por visitar.
 ##  Licencia
 
 Este proyecto está licenciado bajo los términos de la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+=======
+🔗 [://martinaesteva.github.io/mi-proyectoweb/home.html/](https://martinaesteva.github.io/mi-proyectoweb/home.html)
+>>>>>>> 24f8661b77319099e086833566e98a7c647b60d1
