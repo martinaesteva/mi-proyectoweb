@@ -33,6 +33,6 @@ Este proyecto me ha permitido aplicar mis conocimientos de diseño gráfico, int
 
 Gracias por visitar.
 
-##  licencia
+##  Licencia
 
-Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está licenciado bajo la licencia MIT. 
