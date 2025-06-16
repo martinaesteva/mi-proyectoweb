@@ -15,5 +15,7 @@ Este sitio web incluye:
 
 🔗 [://tu-usuario.githuhttpsb.io/martina-portfolio/](https://tu-usuario.github.io/martina-portfolio/)
 
-## 📂 Estructura del proyecto
 
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
