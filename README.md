@@ -18,7 +18,6 @@ El objetivo principal ha sido crear una web profesional, técnicamente funcional
 - Índice con enlaces a 7 páginas individuales de proyectos
 - Diseño limpio, responsive y funcional
 - Técnicas utilizadas: CSS modular, navegación multipágina, estilos personalizados, uso de Git y GitHub Pages
->>>>>>> 24f8661b77319099e086833566e98a7c647b60d1
 
 ##  Características destacadas
 
@@ -45,4 +44,3 @@ Gracias por visitar.
 Este proyecto está licenciado bajo los términos de la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 =======
 🔗 [://martinaesteva.github.io/mi-proyectoweb/home.html/](https://martinaesteva.github.io/mi-proyectoweb/home.html)
->>>>>>> 24f8661b77319099e086833566e98a7c647b60d1
