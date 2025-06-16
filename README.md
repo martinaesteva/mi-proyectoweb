@@ -7,7 +7,7 @@ El objetivo principal ha sido crear una web profesional, técnicamente funcional
 ## Estructura del proyecto
 
 
-- `home.html`: Página principal con navegación a secciones, about me e informacion de contacto.
+- `index.html`: Página principal con navegación a secciones, about me e informacion de contacto.
 - `/aboutme/`: página de apartado about me desarrollando mi perfil profesional.
 - `/contact/`: Páginas de contacto.
 - `/secciones/`: Páginas individuales para cada categoría de trabajo (Branding, Editorial, UX/UI...).
