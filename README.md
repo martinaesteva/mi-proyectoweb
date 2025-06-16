@@ -33,9 +33,6 @@ Este proyecto me ha permitido aplicar mis conocimientos de diseño gráfico, int
 
 Gracias por visitar.
 
----
+##  licencia
 
-**LICENSE**  
 Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-=======
-🔗 [://martinaesteva.github.io/mi-proyectoweb/home.html/](https://martinaesteva.github.io/mi-proyectoweb/home.html)
