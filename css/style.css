@@ -1,3 +1,4 @@
+vale te puedo pasar mi css y me lo corriges con solo estos cambios plssss: /* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -234,14 +235,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-
-  justify-items: center;    /* centra cada tarjeta dentro de su celda */
-  grid-auto-flow: dense; 
 }
-
-  .portfolio-item {
-  width: 100%;  /* que llene la celda del grid */
-  max-width: 280px; /* opcional: que no crezca demasiado */
+.portfolio-item {
   display: block;
   border-radius: 8px;
   overflow: hidden; /* esto recorta todo lo que sobresalga */
