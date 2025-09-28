@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -237,25 +236,7 @@ footer {
   gap: 30px;
 }
 
-/* Solo aplica si la última tarjeta queda en una fila sola */
-.portfolio-grid .portfolio-item:last-child {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.portfolio-item {
-  display: block;
-  border-radius: 8px;
-  overflow: hidden; 
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #222;
-  text-decoration: none;
-  background: white;
-}
-
-.portfolio-item {
+..portfolio-item {
   display: block;
   border-radius: 8px;
   overflow: hidden; /* esto recorta todo lo que sobresalga */
@@ -293,6 +274,51 @@ footer {
 .portfolio-item:hover img {
   transform: scale(1.08);
   filter: brightness(0.9) contrast(1.1);
+}
+
+/* Responsive imágenes */
+@media (max-width: 480px) {
+  .portfolio-item img {
+    height: 140px;
+  }
+}
+
+/* Efecto zoom + fade in para secciones de imágenes */
+.editorial-images img,
+.typography-images img,
+.animation-images img,
+.threed-images img,
+.uxui-images img,
+.photography-images img,
+.branding-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+  opacity: 1; /* asegúrate que estén visibles */
+  transition: transform 0.3s ease; /* transición suave */
+}
+
+.editorial-images img:hover,
+.typography-images img:hover,
+.animation-images img:hover,
+.threed-images img:hover,
+.uxui-images img:hover,
+.photography-images img:hover,
+.branding-images img:hover {
+  transform: scale(1.05); /* escala un 5% más grande */
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Animación escalonada para imágenes */
@@ -341,7 +367,7 @@ footer {
   }
 }
 
-
+/* ======== ESTILOS EXCLUSIVOS DE ABOUT ME ======== */
 .aboutme-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -412,4 +438,3 @@ footer {
     text-align: center;
   }
 }
-
