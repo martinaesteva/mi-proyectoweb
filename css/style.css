@@ -1,8 +1,7 @@
-vale te puedo pasar mi css y me lo corriges con solo estos cambios plssss: /* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 body {
@@ -236,6 +235,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
+
 .portfolio-item {
   display: block;
   border-radius: 8px;
