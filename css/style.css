@@ -38,12 +38,12 @@ header {
 }
 
 .header-name {
-  font-size: 1.5em;       
+  font-size: 1.5em;       /* tamaño similar a branding */
   font-weight: 300;
   line-height: 1;
   margin: 0;
   text-align: left;
-  white-space: nowrap;    
+  white-space: nowrap;    /* fuerza una línea */
   letter-spacing: 0.05em;
 }
 
@@ -108,7 +108,7 @@ p, a, span, li, div, section, nav {
 }
 
 .about-text {
-  min-width: auto; 
+  min-width: auto; /* Quitar ancho mínimo para que ajuste */
   text-align: center;
 }
 
@@ -190,6 +190,7 @@ footer {
   overflow: hidden;
 }
 
+/* Línea visible por defecto + animación al hover */
 .areas li a .line::after {
   content: "";
   position: absolute;
@@ -234,14 +235,12 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-   justify-items: center;
 }
-
 
 .portfolio-item {
   display: block;
   border-radius: 8px;
-  overflow: hidden; /* <--- importante para que nada sobresalga */
+  overflow: hidden; /* ✅ evita que la imagen se salga al hacer zoom */
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -255,19 +254,23 @@ footer {
   height: 180px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.08); /* solo escala la imagen */
+  transform: scale(1.08);
+  filter: brightness(0.9) contrast(1.1);
 }
 
-.portfolio-item h3 {
-  padding: 15px 0;
-  font-weight: 600;
-  font-size: 1.2em;
-  background: white; /* asegúrate de que siempre tenga fondo */
-  margin: 0;
+/* ✅ Última tarjeta centrada */
+.portfolio-item:last-child {
+  grid-column: span 2;
+  justify-self: center;
 }
 
 /* Responsive imágenes */
@@ -289,7 +292,7 @@ footer {
   height: auto;
   display: block;
   margin-bottom: 30px;
-  opacity: 1; 
+  opacity: 1; /* asegúrate que estén visibles */
   transition: transform 0.3s ease; /* transición suave */
 }
 
@@ -361,6 +364,7 @@ footer {
   }
 }
 
+/* ======== ESTILOS EXCLUSIVOS DE ABOUT ME ======== */
 .aboutme-wrapper {
   max-width: 1200px;
   margin: 0 auto;
