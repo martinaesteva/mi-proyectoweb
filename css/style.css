@@ -411,6 +411,10 @@ footer {
   font-weight: 300;
   text-transform: uppercase;
 }
+ .aboutme-text p {
+  margin-bottom: 1.5rem; /* separa los párrafos */
+  line-height: 1.7;     /* hace el texto más legible */
+}
 
 /* Video wrapper y video: siempre aplicar */
 .animation-video-wrapper {
