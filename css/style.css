@@ -1,4 +1,4 @@
-/* ======== CSS BASE (tu actual) ======== */
+
 * { 
   margin: 0; 
   padding: 0; 
@@ -76,7 +76,7 @@ header {
 
 .header-nav a:hover::after {
   width: 100%;
-  background: #007acc;
+  background: #5b5b5b;
 }
 
 /* Headings */
