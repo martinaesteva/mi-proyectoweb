@@ -256,6 +256,10 @@ footer {
   display: block;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
+/* Mover la tarjeta de Photography a la segunda columna */
+.portfolio-item:last-child {
+  grid-column: 2;
+}
 
 .portfolio-item h3 {
   margin: 0;
