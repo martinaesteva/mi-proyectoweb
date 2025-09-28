@@ -515,14 +515,15 @@ footer {
   line-height: 1.7;     /* hace el texto más legible */
 }
 .skills, .tools, .languages {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.skills.visible, .tools.visible, .languages.visible {
-  opacity: 1;
-  transform: translateY(0);
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  /* quitar opacity y transform para que siempre sean visibles */
 }
 
 /* Video wrapper y video: siempre aplicar */
