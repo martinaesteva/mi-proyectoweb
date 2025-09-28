@@ -399,29 +399,35 @@ footer {
   width: 100%;           /* ocupa todo el ancho de su columna */
 }
 
+/* Imagen y bloques alineados y visibles */
 .aboutme-img,
 .skills,
 .tools,
 .languages {
-  display: block;
-  width: 100%;            /* ocupa todo el ancho posible del contenedor */
-  max-width: 300px;       /* limita el tamaño para que coincida con la imagen */
-  margin: 0 auto;         /* centra los bloques */
+  display: block;        /* asegura que se muestren correctamente */
+  width: 100%;           /* ocupa todo el ancho posible del contenedor */
+  max-width: 300px;      /* limita el tamaño para que coincida entre ellos */
+  margin: 0 auto;        /* centra los bloques */
 }
-
 
 /* Bloques Skills, Tools y Languages */
 .skills,
 .tools,
 .languages {
-  display: block;       /* asegura que se muestren correctamente */
-  width: 100%;
-  max-width: 300px;     /* mismo ancho que la imagen */
-  margin: 0 auto;       /* centra los bloques */
   background: #f9f9f9;
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skills.visible,
+.tools.visible,
+.languages.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Títulos de los bloques */
@@ -442,13 +448,13 @@ footer {
   margin: 0;
 }
 
-/* Elementos de lista */
 .skills li,
 .tools li,
 .languages li {
   margin-bottom: 5px;
   line-height: 1.6;
 }
+
 
 /* Columna derecha */
 .aboutme-right {
