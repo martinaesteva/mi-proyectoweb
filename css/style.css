@@ -1,3 +1,4 @@
+/* ======== CSS BASE (tu actual) ======== */
 * { 
   margin: 0; 
   padding: 0; 
@@ -83,8 +84,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
+/* Todos los títulos de sección igual tamaño que Experience y Education */
 h2 {
-  font-size: 1.8em;
+  font-size: 1.5rem; /* CAMBIO: antes 1.8rem, ahora igual que Experience/Education */
   margin-bottom: 15px;
   color: #333;
   text-transform: uppercase;
@@ -308,36 +310,6 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.editorial-images img:nth-child(1),
-.typography-images img:nth-child(1),
-.animation-images img:nth-child(1),
-.threed-images img:nth-child(1),
-.uxui-images img:nth-child(1),
-.photography-images img:nth-child(1),
-.branding-images img:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.editorial-images img:nth-child(2),
-.typography-images img:nth-child(2),
-.animation-images img:nth-child(2),
-.threed-images img:nth-child(2),
-.uxui-images img:nth-child(2),
-.photography-images img:nth-child(2),
-.branding-images img:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.editorial-images img:nth-child(3),
-.typography-images img:nth-child(3),
-.animation-images img:nth-child(3),
-.threed-images img:nth-child(3),
-.uxui-images img:nth-child(3),
-.photography-images img:nth-child(3),
-.branding-images img:nth-child(3) {
-  animation-delay: 0.5s;
-}
-
 @media (max-width: 600px) {
   .header-nav {
     flex-direction: row;
@@ -408,10 +380,19 @@ footer {
 }
 
 .skills h2,
-.tools h2 {
-  margin-bottom: 10px;
-  font-size: 1.5rem; /* igual que Experience y Education */
-  font-weight: 300;
+.tools h2,
+.aboutme-right h2,
+.aboutme-text h2 { 
+  font-size: 1.5rem; /* igual que Experience/Education */
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.skills ul,
+.tools ul {
+  list-style: none; /* quitar puntos */
+  padding: 0;
+  margin: 0;
 }
 
 .aboutme-right {
@@ -420,27 +401,9 @@ footer {
   gap: 40px;
 }
 
-.aboutme-right h2 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
 .aboutme-right p, 
 .aboutme-right ul {
   line-height: 1.6;
-}
-
-.aboutme-img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.aboutme-img:hover {
-  transform: scale(1.05);
 }
 
 .aboutme-text {
@@ -448,48 +411,10 @@ footer {
   text-align: left;
 }
 
-.aboutme-text h2 {
-  font-size: 2.2em;
-  margin-bottom: 2rem;
-  color: #111;
-  text-align: left;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.aboutme-text p {
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-.skills, .tools {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.animation-video-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.animation-video-wrapper video.animation-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
 /* ====== LANGUAGES ====== */
 .languages {
   width: 100%; /* ocupa todo el ancho de la columna derecha */
+  margin-top: 0;
 }
 
 .language-item {
@@ -499,7 +424,7 @@ footer {
 .language-bar {
   width: 100%;
   height: 10px;
-  background-color: #c8c8c8; /* gris clarito */
+  background-color: #ddd; /* gris clarito */
   border-radius: 5px;
   overflow: hidden;
   margin-top: 5px;
@@ -524,3 +449,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
