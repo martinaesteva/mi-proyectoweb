@@ -236,7 +236,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   .portfolio-grid a:last-child {
-  grid-column: 2 / 3; 
+  grid-column: 2 / 3; /* fuerza a estar en la segunda columna */
 }
 
 .portfolio-item {
@@ -251,12 +251,34 @@ footer {
   background: white;
 }
 
+.portfolio-item {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden; /* esto recorta todo lo que sobresalga */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #222;
+  text-decoration: none;
+  background: white;
+  position: relative; /* para controlar contenido interno */
+}
+
 .portfolio-item img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.portfolio-item h3 {
+  margin: 0;
+  padding: 10px 0;
+  background: #fff; /* el fondo blanco fijo */
+  overflow: hidden; /* asegura que el texto no sobresalga */
+  text-overflow: ellipsis; /* opcional: recorta texto si es demasiado largo */
+  white-space: nowrap; /* evita que se divida en varias líneas */
 }
 
 .portfolio-item:hover {
@@ -267,53 +289,6 @@ footer {
 .portfolio-item:hover img {
   transform: scale(1.08);
   filter: brightness(0.9) contrast(1.1);
-}
-
-
-
-/* Responsive imágenes */
-@media (max-width: 480px) {
-  .portfolio-item img {
-    height: 140px;
-  }
-}
-
-/* Efecto zoom + fade in para secciones de imágenes */
-.editorial-images img,
-.typography-images img,
-.animation-images img,
-.threed-images img,
-.uxui-images img,
-.photography-images img,
-.branding-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 30px;
-  opacity: 1; /* asegúrate que estén visibles */
-  transition: transform 0.3s ease; /* transición suave */
-}
-
-.editorial-images img:hover,
-.typography-images img:hover,
-.animation-images img:hover,
-.threed-images img:hover,
-.uxui-images img:hover,
-.photography-images img:hover,
-.branding-images img:hover {
-  transform: scale(1.05); /* escala un 5% más grande */
-}
-
-/* Animación fadeInUp */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Animación escalonada para imágenes */
@@ -433,3 +408,4 @@ footer {
     text-align: center;
   }
 }
+
