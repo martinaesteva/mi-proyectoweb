@@ -395,13 +395,20 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  align-items: center; /* centra todo horizontalmente */
 }
 
 .aboutme-img {
-  width: 100%;
+  width: 100%; /* ocupa el ancho máximo del contenedor */
+  max-width: 300px; /* limita el tamaño para que no se haga gigante en pantallas grandes */
   border-radius: 12px;
   object-fit: cover;
-   align-items: center;
+}
+
+/* Asegura que los bloques tengan el mismo ancho que la imagen */
+.skills, .tools, .languages {
+  width: 100%;
+  max-width: 300px;
 }
 
 .skills, .tools, .languages {
