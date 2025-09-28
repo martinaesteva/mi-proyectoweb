@@ -236,7 +236,12 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   .portfolio-grid a:last-child {
-  grid-column: 2 / 3; /* fuerza a estar en la segunda columna */
+  grid-column: 2 / 3; /* fuerza a estar en la segunda columna */ justify-content: center; /* centra las tarjetas si no llenan la fila */
+}
+
+/* Última tarjeta centrada si hay un número impar de tarjetas */
+.portfolio-grid .portfolio-item:last-child {
+  justify-self: center; /* centra solo la última tarjeta */
 }
 
 .portfolio-item {
