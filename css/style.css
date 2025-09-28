@@ -235,12 +235,14 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+  .portfolio-grid a:last-child {
+  grid-column: 2 / 3; 
 }
 
 .portfolio-item {
   display: block;
   border-radius: 8px;
-  overflow: hidden; /* ✅ evita que la imagen se salga al hacer zoom */
+  overflow: hidden; 
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -267,11 +269,7 @@ footer {
   filter: brightness(0.9) contrast(1.1);
 }
 
-/* ✅ Última tarjeta centrada */
-.portfolio-item:last-child {
-  grid-column: span 2;
-  justify-self: center;
-}
+
 
 /* Responsive imágenes */
 @media (max-width: 480px) {
@@ -364,7 +362,7 @@ footer {
   }
 }
 
-/* ======== ESTILOS EXCLUSIVOS DE ABOUT ME ======== */
+
 .aboutme-wrapper {
   max-width: 1200px;
   margin: 0 auto;
