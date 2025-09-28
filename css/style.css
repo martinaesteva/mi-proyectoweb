@@ -234,9 +234,14 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+
+  justify-items: center;    /* centra cada tarjeta dentro de su celda */
+  grid-auto-flow: dense; 
 }
 
-..portfolio-item {
+  .portfolio-item {
+  width: 100%;  /* que llene la celda del grid */
+  max-width: 280px; /* opcional: que no crezca demasiado */
   display: block;
   border-radius: 8px;
   overflow: hidden; /* esto recorta todo lo que sobresalga */
@@ -265,11 +270,7 @@ footer {
   text-overflow: ellipsis; /* opcional: recorta texto si es demasiado largo */
   white-space: nowrap; /* evita que se divida en varias líneas */
 }
-.portfolio-item.empty {
-  background: none;
-  box-shadow: none;
-  pointer-events: none; /* no clicable */
-}
+
 .portfolio-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
