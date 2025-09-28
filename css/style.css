@@ -390,18 +390,18 @@ footer {
 }
 
 /* Columna izquierda */
+
 .aboutme-left {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centra horizontalmente los elementos dentro de la columna */
   gap: 30px;
 }
 
 .aboutme-img {
   width: 100%;
-  max-width: 300px; /* opcional: limitar el ancho para que no sea demasiado grande */
   border-radius: 12px;
   object-fit: cover;
+   align-items: center;
 }
 
 .skills, .tools, .languages {
