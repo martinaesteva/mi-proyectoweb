@@ -379,11 +379,61 @@ footer {
 }
 
 .aboutme-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* izquierda 1/3, derecha 2/3 */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
+
+.aboutme-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.aboutme-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.aboutme-left h3,
+.aboutme-right h2,
+.aboutme-right h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.aboutme-left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.aboutme-left ul li {
+  margin-bottom: 6px;
+}
+
+.aboutme-right p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.experience h4 {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.experience ul {
+  margin: 0 0 15px 20px;
+  padding: 0;
+}
+
+.education p {
+  margin-bottom: 15px;
+}
+
 
 .aboutme-img {
   width: 300px;
