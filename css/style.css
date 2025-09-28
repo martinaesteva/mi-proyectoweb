@@ -37,12 +37,12 @@ header {
 }
 
 .header-name {
-  font-size: 1.5em;       /* tamaño similar a branding */
+  font-size: 1.5em;
   font-weight: 300;
   line-height: 1;
   margin: 0;
   text-align: left;
-  white-space: nowrap;    /* fuerza una línea */
+  white-space: nowrap;
   letter-spacing: 0.05em;
 }
 
@@ -107,7 +107,7 @@ p, a, span, li, div, section, nav {
 }
 
 .about-text {
-  min-width: auto; /* Quitar ancho mínimo para que ajuste */
+  min-width: auto;
   text-align: center;
 }
 
@@ -189,7 +189,6 @@ footer {
   overflow: hidden;
 }
 
-/* Línea visible por defecto + animación al hover */
 .areas li a .line::after {
   content: "";
   position: absolute;
@@ -198,29 +197,24 @@ footer {
   height: 1px;
   width: 100%;
   background-color: #000;
-  transform: translateX(0); /* visible por defecto */
+  transform: translateX(0);
   transition: transform 0.4s ease;
 }
 
 .areas li a:hover .line::after {
   transform: translateX(-100%);
-  animation: drawLine 0.4s forwards 0.4s; /* espera 0.4s y dibuja */
+  animation: drawLine 0.4s forwards 0.4s;
 }
 
 @keyframes drawLine {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
 }
 
 .areas li a .title {
   white-space: nowrap;
 }
 
-/* Hover efecto */
 .areas li a:hover {
   transform: scale(1.05);
   color: #007acc;
@@ -239,14 +233,14 @@ footer {
 .portfolio-item {
   display: block;
   border-radius: 8px;
-  overflow: hidden; /* esto recorta todo lo que sobresalga */
+  overflow: hidden;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: #222;
   text-decoration: none;
   background: white;
-  position: relative; /* para controlar contenido interno */
+  position: relative;
 }
 
 .portfolio-item img {
@@ -256,7 +250,7 @@ footer {
   display: block;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
-/* Mover la tarjeta de Photography a la segunda columna */
+
 .portfolio-item:last-child {
   grid-column: 2;
 }
@@ -264,10 +258,10 @@ footer {
 .portfolio-item h3 {
   margin: 0;
   padding: 10px 0;
-  background: #fff; /* el fondo blanco fijo */
-  overflow: hidden; /* asegura que el texto no sobresalga */
-  text-overflow: ellipsis; /* opcional: recorta texto si es demasiado largo */
-  white-space: nowrap; /* evita que se divida en varias líneas */
+  background: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .portfolio-item:hover {
@@ -280,14 +274,10 @@ footer {
   filter: brightness(0.9) contrast(1.1);
 }
 
-/* Responsive imágenes */
 @media (max-width: 480px) {
-  .portfolio-item img {
-    height: 140px;
-  }
+  .portfolio-item img { height: 140px; }
 }
 
-/* Efecto zoom + fade in para secciones de imágenes */
 .editorial-images img,
 .typography-images img,
 .animation-images img,
@@ -299,8 +289,8 @@ footer {
   height: auto;
   display: block;
   margin-bottom: 30px;
-  opacity: 1; /* asegúrate que estén visibles */
-  transition: transform 0.3s ease; /* transición suave */
+  opacity: 1;
+  transition: transform 0.3s ease;
 }
 
 .editorial-images img:hover,
@@ -310,22 +300,14 @@ footer {
 .uxui-images img:hover,
 .photography-images img:hover,
 .branding-images img:hover {
-  transform: scale(1.05); /* escala un 5% más grande */
+  transform: scale(1.05);
 }
 
-/* Animación fadeInUp */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animación escalonada para imágenes */
 .editorial-images img:nth-child(1),
 .typography-images img:nth-child(1),
 .animation-images img:nth-child(1),
@@ -358,108 +340,80 @@ footer {
 
 @media (max-width: 600px) {
   .header-nav {
-    flex-direction: row; /* mantener horizontal */
-    flex-wrap: wrap; /* permitir que salte a una nueva línea si es necesario */
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-end;
     padding: 5px 10px;
   }
 
   .header-nav a {
-    font-size: 0.9em; /* reducir tamaño de fuente */
+    font-size: 0.9em;
     padding: 6px 10px;
   }
 }
 
 /* ======== ESTILOS EXCLUSIVOS DE ABOUT ME ======== */
-/* Contenedor general del About Me */
 .aboutme-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 20px;
 }
 
-/* Contenedor principal: columna izquierda y derecha */
 .aboutme-container {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 1fr 2fr; /* 1/3 izquierda, 2/3 derecha */
+  grid-template-columns: 1fr 2fr;
   gap: 40px;
   align-items: start;
 }
 
-/* ===== Columna izquierda ===== */
 .aboutme-left {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  align-items: center;   /* centra horizontalmente la imagen y los bloques */
-  width: 100%;           /* ocupa todo el ancho de su columna */
+  align-items: center;
+  width: 100%;
 }
 
 .aboutme-img,
 .skills,
-.tools
- {
+.tools {
   display: block;
-  width: 100%;            /* ocupa todo el ancho posible del contenedor */
-  max-width: 300px;       /* limita el tamaño para que coincida con la imagen */
-  margin: 0 auto;         /* centra los bloques */
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-
-/* Imagen de Martina */
 .aboutme-img {
   display: block;
-  width: 100%;       /* ocupa todo el ancho del contenedor */
-  max-width: 300px;  /* mismo ancho que los bloques */
+  width: 100%;
+  max-width: 300px;
   border-radius: 12px;
   object-fit: cover;
 }
 
-/* Bloques Skills, Tools y Languages */
 .skills,
-.tools
- {
-  display: block;       /* asegura que se muestren correctamente */
+.tools {
+  display: block;
   width: 100%;
-  max-width: 300px;     /* mismo ancho que la imagen */
-  margin: 0 auto;       /* centra los bloques */
+  max-width: 300px;
+  margin: 0 auto;
   background: #f9f9f9;
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-/* Títulos de los bloques */
 .skills h2,
-.tools h2
- {
+.tools h2 {
   margin-bottom: 10px;
   font-size: 1.1rem;
   font-weight: 300;
 }
 
-/* Listas dentro de los bloques */
-.skills ul,
-.tools ul
-{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Elementos de lista */
-.skills li,
-.tools li
-{
-  margin-bottom: 5px;
-  line-height: 1.6;
-}
-
-/* Columna derecha */
 .aboutme-right {
   display: flex;
   flex-direction: column;
@@ -475,36 +429,6 @@ footer {
 .aboutme-right ul {
   line-height: 1.6;
 }
-.language-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #f9f9f9;  /* gris clarito */
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-
-.language-level {
-  height: 100%;
-  background-color: #555; /* gris oscuro */
-  border-radius: 5px;
-  width: 0; /* empieza desde 0 para la animación */
-  animation: fillBar 1.5s forwards; /* animación de llenado */
-}
-
-/* Animación para llenar la barra */
-@keyframes fillBar {
-  from { width: 0; }
-  to { width: var(--level-width); } /* usamos variable CSS para cada idioma */
-}
-
-/* Responsive: en pantallas pequeñas pasa a una sola columna */
-@media (max-width: 768px) {
-  .aboutme-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 .aboutme-img {
   width: 300px;
@@ -532,11 +456,13 @@ footer {
   font-weight: 300;
   text-transform: uppercase;
 }
- .aboutme-text p {
-  margin-bottom: 1.5rem; /* separa los párrafos */
-  line-height: 1.7;     /* hace el texto más legible */
+
+.aboutme-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
-.skills, .tools, .languages {
+
+.skills, .tools {
   display: block;
   width: 100%;
   max-width: 300px;
@@ -545,10 +471,8 @@ footer {
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  /* quitar opacity y transform para que siempre sean visibles */
 }
 
-/* Video wrapper y video: siempre aplicar */
 .animation-video-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -561,4 +485,43 @@ footer {
   display: block;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-} 
+}
+
+/* ====== CAMBIOS LENGUAGES ====== */
+.languages {
+  max-width: 400px;
+  margin-top: 30px;
+}
+
+.language-item {
+  margin-bottom: 15px;
+}
+
+.language-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #f9f9f9; /* gris clarito */
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.language-level {
+  height: 100%;
+  background-color: #555; /* gris oscuro */
+  border-radius: 5px;
+  width: 0;
+  animation: fillBar 1.5s forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--level-width); }
+}
+
+@media (max-width: 768px) {
+  .aboutme-container {
+    grid-template-columns: 1fr;
+  }
+}
