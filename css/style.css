@@ -395,18 +395,20 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  align-items: center; /* centra todo horizontalmente */
-  width: 100%; /* asegura que ocupe toda la columna del grid */
+  align-items: center;   /* centra horizontalmente la imagen y los bloques */
+  width: 100%;           /* ocupa todo el ancho de su columna */
 }
 
-/* Imagen de Martina */
-.aboutme-img {
+.aboutme-img,
+.skills,
+.tools,
+.languages {
   display: block;
-  width: 100%;       /* ocupa todo el ancho del contenedor */
-  max-width: 300px;  /* mismo ancho que los bloques */
-  border-radius: 12px;
-  object-fit: cover;
+  width: 100%;            /* ocupa todo el ancho posible del contenedor */
+  max-width: 300px;       /* limita el tamaño para que coincida con la imagen */
+  margin: 0 auto;         /* centra los bloques */
 }
+
 
 /* Bloques Skills, Tools y Languages */
 .skills,
